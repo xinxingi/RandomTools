@@ -74,17 +74,11 @@ public class Driver {
         tfName1.setBounds(420, 325, 200, 30);
         tfName1.setPreferredSize(new Dimension(50, 20));
 
-        //人数文本
-//        JLabel CurrentRange = new JLabel("当前人数范围:"+Utils.getProperties("maxPerson"));
-//        CurrentRange.setBounds(30, 5, 200, 80);
-//        CurrentRange.setFont(new Font("宋体", Font.PLAIN, 25));
-//        CurrentRange.setForeground(new Color(255, 48, 48));
 
         f.add(lName);
         f.add(tfName);
         f.add(lName1);
         f.add(tfName1);
-//        f.add(CurrentRange);
 
         // 按钮组件
         JButton c = new JButton("确定");
@@ -99,8 +93,9 @@ public class Driver {
             // actionPerformed 方法就会被执行
             @Override
             public void actionPerformed(ActionEvent e){
-                if (tfName.getText().isEmpty()) {
+                if (tfName.getText().isEmpty() || Integer.parseInt(tfName.getText()) == 0) {
                     System.out.println("你没有输入数据，无需变更");
+                    JOptionPane.showMessageDialog(f,"莫要不输入数据或者为0");
                 }else {
                     Utils.setProperties("maxPerson", tfName.getText());
                 }
