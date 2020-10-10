@@ -1,0 +1,2 @@
+# RandomTools
+基于JavaSE图形化的随机数提取工具
