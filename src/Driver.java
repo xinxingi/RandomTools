@@ -1,3 +1,5 @@
+
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -10,6 +12,7 @@ public class Driver {
 
     public static void main(String[] args){
         /**
+         * ----------------------------------------------------------------------------------------
          * 主窗口
          */
         // 主窗体
@@ -22,6 +25,7 @@ public class Driver {
         f.setLayout(null);
 
         /**
+         * -----------------------------------------------------------------------------------------
          * 按钮等组件
          */
         // 按钮组件
@@ -107,10 +111,6 @@ public class Driver {
 
                 }
 
-
-                //重启
-
-
             }
 
         });
@@ -119,9 +119,13 @@ public class Driver {
         JMenuBar mb = new JMenuBar();
         // 菜单
         JMenu jm = new JMenu("关于");
+        JMenu jmTruant = new JMenu("Truant");
+
         //菜单项
         JMenuItem ji = new JMenuItem("白名单列表");
-        // 给按钮 增加 监听
+        jm.add(ji);
+
+        // 给菜单项 增加 监听
         ji.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -129,9 +133,20 @@ public class Driver {
             }
         });
 
-        jm.add(ji);
+        /**
+         * ---------------------------------Truant---------------------------------------------------
+         */
+
+        Truant.TruantJPanel(f, jmTruant);
+        /**
+         * ---------------------------------Truant---------------------------------------------------
+         */
+
+
+
         // 把菜单加入到菜单栏
         mb.add(jm);
+        mb.add(jmTruant);
         // 把菜单栏加入到frame，这里用的是set而非add
         f.setJMenuBar(mb);
 
