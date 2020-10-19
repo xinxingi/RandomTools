@@ -78,16 +78,17 @@ public class Index {
             @Override
             public void actionPerformed(ActionEvent e){
                 if (tfName.getText().isEmpty() || Integer.parseInt(tfName.getText()) == 0) {
-                    System.out.println("你没有输入数据，无需变更");
-                    JOptionPane.showMessageDialog(f,"莫要不输入数据或者为0");
+
                 }else {
                     Utils.setProperties("maxPerson", tfName.getText());
+                    JOptionPane.showMessageDialog(f,"MaxPerson修改成功");
                 }
 
                 if (tfName1.getText().isEmpty()) {
-                    System.out.println("你没有输入数据，无需变更");
+
                 }else {
                     Utils.setProperties("throwPerson", tfName1.getText() + "," + Utils.getProperties("throwPerson"));
+                    JOptionPane.showMessageDialog(f,"ThrowPerson修改成功");
 
                 }
 
