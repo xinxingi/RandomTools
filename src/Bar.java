@@ -6,8 +6,8 @@ import java.util.Arrays;
 import java.util.List;
 
 
-public class Truant {
-    public static void TruantJPanel(JFrame f, JMenu jmTruant){
+public class Bar {
+    public static void Truant(JFrame f, JMenu jmTruant){
 
         //Truant 菜单项
         JMenuItem jiTruantAdd = new JMenuItem("Add");
@@ -68,6 +68,20 @@ public class Truant {
             }
         });
 
+    }
+
+    public static void About(JFrame jFrame, JMenu jmAbout){
+        //菜单项
+        JMenuItem ji = new JMenuItem("白名单列表");
+        jmAbout.add(ji);
+
+        // 给菜单项 增加 监听
+        ji.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(jFrame,Utils.getProperties("throwPerson").split(","));
+            }
+        });
 
 
     }
